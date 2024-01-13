@@ -1,4 +1,4 @@
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
 import styled from "styled-components";
 
 export const CallToActionContainer = styled.div`
@@ -12,10 +12,14 @@ export const CallToActionContainer = styled.div`
     border-radius: 15px;
     margin-top: -300px;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+    
+    @media screen and (max-width: 600px) {
+        padding: 50px ${MOBILE_X_PADDING};
     }
 `;
 
@@ -24,7 +28,7 @@ export const LeftColumn = styled.div`
     flex-direction: column;
     gap: 5px;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         flex-direction: column;
         gap: 10px;
         text-align: center;

@@ -1,4 +1,5 @@
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
+import { BLACK } from "@designo/theme/colors.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
 import styled from "styled-components";
 import css from "styled-jsx/css";
 
@@ -8,22 +9,34 @@ export const HeaderContainer = styled.header`
     align-items: center;
     padding: 50px ${DESKTOP_X_PADDING};
 
+    #burger {
+        display: none;
+    }
+
     .toggle-menu-icon {
         display: none;
         position: relative;
         z-index: 10;
 
         @media screen and (max-width: 600px) {
-                display: flex;
+            display: flex;
         }
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         padding-right: 25px;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         padding: 50px ${TABLET_X_PADDING};
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 25px ${MOBILE_X_PADDING};
+
+        #burger {
+            display: unset;
+        }
     }
 `;
 
@@ -37,12 +50,21 @@ export const HeaderOptions = styled.div`
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
-        padding-top: 150px;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.04);
-        backdrop-filter: blur(40.774227142333984px);
-        width: 254px;
+        top: 96px;
+        left: 0;
+        background: ${BLACK};
+        width: 100vw;
+        padding: 48px 24px;
+
+        span {
+            width: 100%;
+            color: #FFF;
+            font-family: Jost;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 25px;
+            letter-spacing: 2px;
+        }
     }
 `;

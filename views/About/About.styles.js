@@ -14,7 +14,7 @@ export const AboutUsContainer = styled.div`
         display: none;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         margin: 50px ${TABLET_X_PADDING};
         grid-template-columns: 1fr;
 
@@ -28,6 +28,15 @@ export const AboutUsContainer = styled.div`
             border-radius: 15px 15px 0 0;
         }
     }
+
+    @media screen and (max-width: 600px) {
+        margin: 50px 0;
+        border-radius: 0;
+        img {
+            height: auto;
+            border-radius: 0!important;
+        }
+    }
 `;
 
 export const AboutUsInfoColumn = styled.div`
@@ -37,10 +46,14 @@ export const AboutUsInfoColumn = styled.div`
     gap: 20px;
     padding: 0 95px;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         padding: 95px;
         align-items: center;
         text-align: center;
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 20px;
     }
 `;
 
@@ -74,7 +87,7 @@ export const AboutInfoContainer = styled.div`
         display: none;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         margin: 50px ${TABLET_X_PADDING};
         flex-direction: column;
 
@@ -86,6 +99,15 @@ export const AboutInfoContainer = styled.div`
             display: block;
             width: 100%;
             border-radius: 15px 15px 0 0;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 50px 0;
+        border-radius: 0;
+        img {
+            height: auto;
+            border-radius: 0!important;
         }
     }
 `;

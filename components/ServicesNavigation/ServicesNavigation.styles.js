@@ -1,5 +1,5 @@
 import { TRANSPARENT_BLACK, TRANSPARENT_PEACH } from '@designo/theme/colors.theme';
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from '@designo/theme/spacing.theme';
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from '@designo/theme/spacing.theme';
 import styled, { css } from 'styled-components';
 
 export const ServicesContainer = styled.div`
@@ -8,10 +8,14 @@ export const ServicesContainer = styled.div`
     grid-gap: 25px;
     margin: 50px ${DESKTOP_X_PADDING};
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         display: flex;
         flex-direction: column;
         margin: 50px ${TABLET_X_PADDING};
+    }
+
+    @media screen and (max-width: 600px) {
+        margin: 50px ${MOBILE_X_PADDING};
     }
 `;
 
@@ -49,6 +53,16 @@ export const NavigatorTitle = styled.h3`
     font-weight: 500;
     line-height: 48px; /* 120% */
     letter-spacing: 2px;
+
+    @media screen and (max-width: 600px) {
+        text-align: center;
+        font-family: Jost;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px; 
+        letter-spacing: 1.4px;
+    }
 `;
 
 export const NavigatorText = styled.h6`

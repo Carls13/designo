@@ -23,8 +23,6 @@ export const Option = styled.span`
         }
     }
 
-    
-
     &:nth-child(1) {
         padding-left: 120px;
     }
@@ -40,7 +38,7 @@ export const Option = styled.span`
         backdrop-filter: none;
 
         &:nth-child(1) {
-            padding-left: 25px;
+            padding-left: 0;
         }
        
         &:nth-child(4) {

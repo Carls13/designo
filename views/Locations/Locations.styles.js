@@ -1,5 +1,5 @@
 import { BLACK, PEACH } from "@designo/theme/colors.theme";
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
 import styled from "styled-components"
 
 export const LocationRow = styled.div`
@@ -8,7 +8,7 @@ export const LocationRow = styled.div`
     grid-gap: 25px;
     margin: 25px ${DESKTOP_X_PADDING};
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         margin: 50px ${TABLET_X_PADDING};
         display: flex;
         flex-direction: ${props => props.reverse ? 'column' : 'column-reverse'};;
@@ -25,8 +25,15 @@ export const LocationInfoContainer = styled.div`
     justify-content: center;
     gap: 15px;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         padding: 95px;
+    }
+
+    @media screen and (max-width: 600px) {
+        align-items: center;
+        text-align: center;
+        padding: ${MOBILE_X_PADDING};
+        width: 100%;
     }
 `;
 
@@ -43,6 +50,11 @@ export const LocationTitle = styled.h3`
 export const LocationDetailsRow = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
 `;
 
 export const LocationDetailsColumn = styled.div`

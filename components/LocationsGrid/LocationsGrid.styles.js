@@ -1,5 +1,5 @@
 import { PEACH, WHITE, BLACK } from "@designo/theme/colors.theme";
-import { DESKTOP_X_PADDING } from "@designo/theme/spacing.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING } from "@designo/theme/spacing.theme";
 import styled from "styled-components";
 
 export const LocationsGridContainer = styled.div`
@@ -7,11 +7,15 @@ export const LocationsGridContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     margin: 50px ${DESKTOP_X_PADDING};
     
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         display: flex;
         flex-direction: column;
         gap: 50px;
         text-align: center;
+    }
+
+    @media screen and (max-width: 1200px) {
+        margin: 50px ${MOBILE_X_PADDING};
     }
 `;
 

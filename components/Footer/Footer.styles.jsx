@@ -1,7 +1,7 @@
 import { BLACK, DARK_GREY, WHITE } from "@designo/theme/colors.theme";
 import styled from "styled-components";
 import css from "styled-jsx/css";
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
+import { DESKTOP_X_PADDING, TABLET_X_PADDING, MOBILE_X_PADDING } from "@designo/theme/spacing.theme";
 
 export const FooterContainer = styled.footer`
     background-color: ${BLACK};
@@ -20,11 +20,19 @@ export const FooterContainer = styled.footer`
         width: 100%;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         padding: ${(props) => {
-            if (props.bigPadding) return`144px ${TABLET_X_PADDING} 72px ${TABLET_X_PADDING}`;
+            if (props.bigPadding) return `144px ${TABLET_X_PADDING} 72px ${TABLET_X_PADDING}`;
             
             return `72px ${TABLET_X_PADDING}`;
+        }};
+    }
+    
+    @media screen and (max-width: 600px) {
+        padding: ${(props) => {
+            if (props.bigPadding) return `144px ${MOBILE_X_PADDING} 72px ${MOBILE_X_PADDING}`;
+            
+            return `72px ${MOBILE_X_PADDING}`;
         }};
     }
 `;
@@ -33,22 +41,41 @@ export const FooterFirstRow = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        gap: 15px;
+    }
 `;
 
 export const FooterOptions = styled.div`
     display: flex;
     align-items: center;
     gap: 25px;
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        text-align: center;
+    }
 `;
 
 export const FooterInfoGrid = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+    }
 `;
 
 export const ContactContainer = styled.div`
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 600px) {
+        text-align: center;
+    }
 `;
 
 export const Info = styled.span`
@@ -65,6 +92,11 @@ export const SocialContainer = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+
+    @media screen and (max-width: 600px) {
+       justify-content: center;
+       align-items: center;
+    }
 `;
 
 export const SocialRow = styled.div`

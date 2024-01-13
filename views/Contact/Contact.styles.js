@@ -1,5 +1,5 @@
 import { WHITE } from "@designo/theme/colors.theme";
-import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
+import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
 
 import styled from "styled-components";
 
@@ -12,9 +12,15 @@ export const ContactUsContainer = styled.div`
     border-radius: 15px;
     margin: 50px ${DESKTOP_X_PADDING};
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;
         margin: 50px ${TABLET_X_PADDING};
+    }
+    
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        margin: 50px 0;
+        border-radius: 0;
     }
 `;
 
@@ -25,7 +31,7 @@ export const ContactInfoColumn = styled.div`
     gap: 20px;
     padding: 95px 40px 95px 95px;
     
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         padding: ${TABLET_X_PADDING};
     }
 `;
@@ -38,6 +44,10 @@ export const ContactUsTitle = styled.h2`
     font-style: normal;
     font-weight: 500;
     line-height: 48px;
+
+    @media screen and (max-width: 600px) {
+        text-align: center;
+    }
 `;
 
 export const ContactUsText = styled.p`
@@ -48,6 +58,10 @@ export const ContactUsText = styled.p`
     font-style: normal;
     font-weight: 400;
     line-height: 26px;
+
+    @media screen and (max-width: 600px) {
+       text-align: center;
+    }
 `;
 
 export const FormContainer = styled.div`
@@ -62,8 +76,15 @@ export const FormContainer = styled.div`
         display: block;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1200px) {
         padding: ${TABLET_X_PADDING};
+    }
+
+    @media screen and (max-width: 600px) {
+        button {
+            margin: auto;
+            display: block;
+        }
     }
 `;
 

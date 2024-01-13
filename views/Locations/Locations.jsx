@@ -9,6 +9,16 @@ import {
     LocationDetailsColumn,
     LocationInfo
  } from './Locations.styles';
+import { forwardRef } from "react";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(
+        () => import('@designo/components/Map/Map.jsx'),
+        { 
+          loading: () => <p>A map is loading</p>,
+          ssr: false
+        }
+      );
 
 export const LocationsView = () => {
     return (
@@ -29,10 +39,10 @@ export const LocationsView = () => {
                         </LocationDetailsColumn>
                     </LocationDetailsRow>
                 </LocationInfoContainer>
-                <Image src={'/canada-map.png'} alt="Canada" width={350} height={326} />
+                <Map location={[43.6440163,-79.3945394]} />
             </LocationRow>
             <LocationRow reverse>
-                <Image src={'/australia-map.png'} alt="Australia" width={350} height={326} />
+                <Map location={[-30.3293985, 149.7882399]} />
                 <LocationInfoContainer>
                     <LocationTitle>Australia</LocationTitle>
                     <LocationDetailsRow>
@@ -65,7 +75,7 @@ export const LocationsView = () => {
                         </LocationDetailsColumn>
                     </LocationDetailsRow>
                 </LocationInfoContainer>
-                <Image src={'/united-kingdom-map.png'} alt="United Kingdom" width={350} height={326} />
+                <Map location={[51.7320565,-3.8803538]} />
             </LocationRow>
         </Layout>
     );
