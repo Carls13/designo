@@ -1,5 +1,5 @@
-import { WHITE } from "@designo/theme/colors.theme";
-import { DESKTOP_X_PADDING, MOBILE_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
+import { BLACK, PEACH, WHITE } from "@designo/theme/colors.theme";
+import { DESKTOP_X_PADDING, TABLET_X_PADDING } from "@designo/theme/spacing.theme";
 
 import styled from "styled-components";
 
@@ -136,4 +136,41 @@ export const TextArea = styled.textarea`
         font-weight: 500;
         line-height: 26px;
     }
+`;
+
+export const InputContainer = styled.div`
+    display: flex;
+    position: relative;
+`;
+
+export const ErrorContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-style: italic;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    font-family: Jost;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 26px;
+    color: ${WHITE};
+`;
+
+export const SuccessMessage = styled.div`
+    position: sticky;
+    bottom: 5vw;
+    width: 200px;
+    text-align: center;
+    background-color: ${BLACK};
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${WHITE};
+    left: calc(50vw - 100px);
+    padding: 20px;
+    font-family: Jost;
 `;
